@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "about-abstract-1",
+      "description": "Abstract network diagram representing technological sophistication and interconnected systems.",
+      "imageUrl": "https://picsum.photos/seed/axion1/1200/800",
+      "imageHint": "abstract network"
+    },
+    {
+      "id": "team-founder",
+      "description": "Professional portrait of the founder of Axion Ventures.",
+      "imageUrl": "https://picsum.photos/seed/axion2/400/400",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "team-placeholder-1",
+      "description": "Placeholder for a future team member's headshot.",
+      "imageUrl": "https://picsum.photos/seed/axion3/400/400",
+      "imageHint": "corporate headshot"
+    },
+    {
+      "id": "team-placeholder-2",
+      "description": "Placeholder for a future team member's headshot.",
+      "imageUrl": "https://picsum.photos/seed/axion4/400/400",
+      "imageHint": "corporate headshot"
+    }
+  ]
 }
