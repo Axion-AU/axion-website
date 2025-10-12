@@ -2,11 +2,10 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { BarChart, BrainCircuit, Goal } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
-  const abstractImage = PlaceHolderImages.find(
-    (p) => p.id === 'about-abstract-1'
-  );
+  const founderImage = PlaceHolderImages.find((p) => p.id === 'team-founder');
 
   return (
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
@@ -73,35 +72,53 @@ export default function AboutPage() {
         </Card>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+      <div className="grid lg:grid-cols-5 gap-12 items-center">
+        <div className="lg:col-span-3">
           <h2 className="text-3xl font-bold font-headline mb-4">
-            The Founder's Vision
+            About the Founder
           </h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              With extensive experience in building complex systems and a passion
-              for ethical innovation, Axion's founder established the studio to
-              create a more efficient and impactful way to launch startups.
+              <Link href="/team" className="text-accent font-semibold hover:underline">
+                Ethan Cornwill
+              </Link>{" "}
+              is a systems thinker, technologist, and entrepreneur dedicated to
+              building scalable, ethical, and technically sophisticated
+              startups. He is the founder of Axion Ventures, a venture studio
+              designed to consolidate intellectual property and incubate
+              high-impact ventures from the ground up.
             </p>
             <p>
-              The vision is to move beyond the traditional "one-shot" startup
-              model and instead build a portfolio of interconnected ventures
-              that leverage a shared technological backbone. This approach
-              de-risks individual projects and accelerates growth across the
-              ecosystem.
+              Ethan’s career spans over a decade of strategic problem-solving,
+              from operational leadership in high-volume retail to pioneering
+              AI-driven technology solutions. He is the creator of SPARC, a
+              proprietary AI-native development engine that amplifies the
+              capabilities of solo founders and small teams, and the founder of
+              Nexus, a financial wellness platform built for couples.
+            </p>
+            <p>
+              A lifelong advocate for evidence-based innovation, Ethan applies a
+              rigorous, data-driven approach to entrepreneurship and product
+              development. His ventures are characterized by elegant technical
+              design, ethical frameworks, and a focus on adoption and
+              real-world impact.
+            </p>
+            <p>
+              At Axion Ventures, he fosters a collaborative environment where
+              talented partners can co-create the next generation of
+              transformative startups.
             </p>
           </div>
         </div>
-        {abstractImage && (
-          <div className="rounded-lg overflow-hidden shadow-2xl shadow-primary/10">
+        {founderImage && (
+          <div className="lg:col-span-2 rounded-lg overflow-hidden shadow-2xl shadow-primary/10">
             <Image
-              src={abstractImage.imageUrl}
-              alt={abstractImage.description}
-              width={1200}
-              height={800}
+              src={founderImage.imageUrl}
+              alt={founderImage.description}
+              width={600}
+              height={600}
               className="w-full h-auto object-cover"
-              data-ai-hint={abstractImage.imageHint}
+              data-ai-hint={founderImage.imageHint}
             />
           </div>
         )}
