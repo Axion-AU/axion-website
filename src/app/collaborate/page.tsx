@@ -1,5 +1,11 @@
 import { CollaborateForm } from "@/components/collaborate-form";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 export default function CollaboratePage() {
   return (
@@ -10,13 +16,19 @@ export default function CollaboratePage() {
             Collaborate With Us
           </h1>
           <p className="text-lg text-muted-foreground">
-            Axion Ventures thrives on partnership. We believe the best ventures
-            are built by diverse teams with complementary skills. We're actively
-            seeking co-founders, advisors, and strategic partners to join us on
-            our mission.
+            Axion Ventures is an early-stage venture studio, currently
+            developing its flagship project, Nexus, and building a portfolio of
+            high-impact startups.
           </p>
           <div className="space-y-4 text-muted-foreground">
-            <h2 className="text-2xl font-semibold font-headline text-foreground">
+            <p>
+              As a founding collaborator, you have the opportunity to help
+              define the future of our ventures and take a meaningful stake in
+              their success. Our projects are intentionally incubated within
+              Axion, allowing us to consolidate intellectual property, refine
+              our products, and maximize impact before scaling commercially.
+            </p>
+            <h2 className="text-2xl font-semibold font-headline text-foreground pt-4">
               Who We're Looking For
             </h2>
             <p>
@@ -55,8 +67,12 @@ export default function CollaboratePage() {
         <div>
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl font-headline">Get in Touch</CardTitle>
-              <CardDescription>Fill out the form below to start a conversation.</CardDescription>
+              <CardTitle className="text-2xl font-headline">
+                Get in Touch
+              </CardTitle>
+              <CardDescription>
+                Fill out the form below to start a conversation.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <CollaborateForm />

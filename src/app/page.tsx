@@ -20,7 +20,7 @@ export default function Home() {
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
               Axion Ventures is a venture studio consolidating intellectual
               property for multiple startups. We build scalable, ethical, and
-              technically sophisticated companies like Nexus from the
+              technically sophisticated companies from the
               ground up.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
