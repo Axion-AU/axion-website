@@ -5,6 +5,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/ventures', label: 'Ventures' },
+  { href: '/approach', label: 'Approach' },
   { href: '/collaborate', label: 'Collaborate' },
   { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
