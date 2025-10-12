@@ -8,24 +8,28 @@ import {
   CardFooter,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 const ventures = [
   {
-    name: 'SPARC',
-    description:
-      'An internal AI-native development engine and force multiplier. SPARC is the proprietary platform we use to rapidly prototype, build, and scale our ventures, embedding intelligence from day one.',
-    status: 'Internal Tool',
-    tags: ['AI', 'Development', 'Internal Tool'],
-  },
-  {
     name: 'Nexus',
+    slug: 'nexus',
     description:
       'A financial wellness application designed for couples. Nexus aims to simplify shared finances, promote transparency, and help partners achieve their financial goals together.',
     status: 'Active',
     tags: ['FinTech', 'Wellness', 'B2C'],
   },
   {
+    name: 'SPARC',
+    slug: null,
+    description:
+      'An internal AI-native development engine and force multiplier. SPARC is the proprietary platform we use to rapidly prototype, build, and scale our ventures, embedding intelligence from day one.',
+    status: 'Internal Tool',
+    tags: ['AI', 'Development', 'Internal Tool'],
+  },
+  {
     name: 'MunchRun',
+    slug: null,
     description:
       "A food delivery logistics platform. The lessons learned from MunchRun's operational challenges informed our current focus on scalable, software-centric ventures.",
     status: 'Archived',
@@ -33,6 +37,7 @@ const ventures = [
   },
   {
     name: 'MagnetLab',
+    slug: null,
     description:
       "A B2B marketing automation tool from a previous venture of the founder. MagnetLab's journey taught us valuable insights into go-to-market strategies and the importance of deep customer integration.",
     status: 'Previous Venture',
@@ -61,7 +66,9 @@ export default function VenturesPage() {
                   {venture.name}
                 </CardTitle>
                 <Badge
-                  variant={venture.status === 'Active' ? 'default' : 'secondary'}
+                  variant={
+                    venture.status === 'Active' ? 'default' : 'secondary'
+                  }
                   className={
                     venture.status === 'Active'
                       ? 'bg-accent text-accent-foreground'
@@ -85,9 +92,15 @@ export default function VenturesPage() {
               <p className="text-muted-foreground">{venture.description}</p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full">
-                Learn More
-              </Button>
+              {venture.slug ? (
+                <Button asChild variant="outline" className="w-full">
+                  <Link href={`/ventures/${venture.slug}`}>Learn More</Link>
+                </Button>
+              ) : (
+                <Button variant="outline" className="w-full" disabled>
+                  Learn More
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}

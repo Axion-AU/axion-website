@@ -29,38 +29,34 @@ export default function CollaboratePage() {
               our products, and maximize impact before scaling commercially.
             </p>
             <h2 className="text-2xl font-semibold font-headline text-foreground pt-4">
-              Who We're Looking For
+              We're looking for a Capital and Network Co-founder
             </h2>
             <p>
               While we have deep technical expertise in-house, we are
-              particularly interested in partners who can bring expertise in:
+              particularly interested in a partner who can:
             </p>
             <ul className="list-disc list-inside space-y-2">
               <li>
                 <span className="font-semibold text-foreground">
-                  Venture Funding:
+                  Access or provide funding:
                 </span>{" "}
-                Experience in raising capital and navigating the investment
-                landscape.
+                To launch Axion and its ventures.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
-                  Market Adoption:
+                  Market ideas effectively:
                 </span>{" "}
-                Proven ability to drive user growth and achieve product-market
-                fit.
+                To secure adoption and drive user growth.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
-                  Marketing & Sales:
+                  Partner strategically:
                 </span>{" "}
-                Expertise in building brands and creating effective sales
-                funnels.
+                To scale our vision and build a powerful network.
               </li>
             </ul>
             <p>
-              If you have a passion for building impactful companies and possess
-              skills in these areas, we would love to hear from you.
+              If you thrive on high-leverage opportunities, want to work in a studio environment where your contributions are amplified by smart systems, and believe in building ventures the right way, we would love to hear from you.
             </p>
           </div>
         </div>
