@@ -14,7 +14,7 @@ const ventures = [
     name: 'SPARC',
     description:
       'An internal AI-native development engine and force multiplier. SPARC is the proprietary platform we use to rapidly prototype, build, and scale our ventures, embedding intelligence from day one.',
-    status: 'Active',
+    status: 'Internal Tool',
     tags: ['AI', 'Development', 'Internal Tool'],
   },
   {
@@ -34,8 +34,8 @@ const ventures = [
   {
     name: 'MagnetLab',
     description:
-      "A B2B marketing automation tool. MagnetLab's journey taught us valuable insights into go-to-market strategies and the importance of deep customer integration.",
-    status: 'Archived',
+      "A B2B marketing automation tool from a previous venture of the founder. MagnetLab's journey taught us valuable insights into go-to-market strategies and the importance of deep customer integration.",
+    status: 'Previous Venture',
     tags: ['SaaS', 'Marketing', 'Lessons Learned'],
   },
 ];

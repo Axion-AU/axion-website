@@ -32,10 +32,10 @@ export default function TeamPage() {
                   alt="Founder of Axion Ventures"
                   data-ai-hint={founderImage.imageHint}
                 />
-                <AvatarFallback>AV</AvatarFallback>
+                <AvatarFallback>EC</AvatarFallback>
               </Avatar>
             )}
-            <h3 className="text-xl font-semibold font-headline">The Founder</h3>
+            <h3 className="text-xl font-semibold font-headline">Ethan Cornwill</h3>
             <p className="text-sm text-accent">Visionary & Chief Architect</p>
             <p className="mt-4 text-sm text-muted-foreground">
               With a background in engineering and a drive for ethical
