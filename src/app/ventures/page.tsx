@@ -49,6 +49,15 @@ const ventures = [
     status: 'Previous Venture',
     tags: ['SaaS', 'AI', 'Lessons Learned'],
   },
+  {
+    name: 'Merry Berry Açaí',
+    category: 'Previous Ventures',
+    slug: 'merry-berry-acai',
+    description:
+      'A student project that became a valuable case study in motivation, accountability, and the challenges of remote collaboration in a distributed, volunteer-based team.',
+    status: 'Case Study',
+    tags: ['Teamwork', 'Motivation', 'Lessons Learned'],
+  },
 ];
 
 const ventureCategories = [
