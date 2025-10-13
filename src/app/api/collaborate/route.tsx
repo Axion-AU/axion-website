@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { CollaborateFormEmail } from '@/emails/collaborate-form-email';
 
+export const runtime = 'edge';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 const toEmail = process.env.FORM_SUBMISSION_EMAIL;
 
@@ -15,7 +17,7 @@ export async function POST(request: Request) {
     }
     
     const { data, error } = await resend.emails.send({
-      from: 'Collaborate <collaborate@mail.axionventures.com.au>',
+      from: 'Collaborate <onboarding@resend.dev>',
       to: toEmail,
       subject: `New Collaboration Inquiry from ${name}`,
       reply_to: email,

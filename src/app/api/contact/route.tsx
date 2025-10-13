@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { ContactFormEmail } from '@/emails/contact-form-email';
 
+export const runtime = 'edge';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 const toEmail = process.env.FORM_SUBMISSION_EMAIL;
 
@@ -16,7 +18,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Collaborate <collaborate@mail.axionventures.com.au>',
+      from: 'Contact Form <onboarding@resend.dev>',
       to: toEmail,
       subject: `New Message from ${name} via Axion Ventures`,
       reply_to: email,
