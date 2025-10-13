@@ -45,9 +45,7 @@ export function CollaborateForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Collaborate form submitted with values:", values);
     try {
-      console.log("Attempting to send collaboration inquiry...");
       const response = await fetch('/api/collaborate', {
         method: 'POST',
         headers: {
@@ -56,22 +54,16 @@ export function CollaborateForm() {
         body: JSON.stringify(values),
       });
 
-      console.log("Received response from /api/collaborate:", response);
-
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Failed to parse error response.' }));
-        console.error("Collaboration API response not OK.", "Status:", response.status, "Data:", errorData);
         throw new Error(`Server error: ${response.statusText}`);
       }
 
-      console.log("Collaboration inquiry sent successfully.");
       toast({
         title: "Message Sent!",
         description: "Thank you for your interest. We'll be in touch soon.",
       });
       form.reset();
     } catch (error) {
-      console.error("Error in onSubmit for collaboration form:", error);
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
