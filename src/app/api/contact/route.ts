@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       to: toEmail,
       subject: `New Message from ${name} via Axion Ventures`,
       reply_to: email,
-      react: ContactFormEmail({ name, email, message }),
+      react: <ContactFormEmail name={name} email={email} message={message} />,
     });
 
     if (error) {

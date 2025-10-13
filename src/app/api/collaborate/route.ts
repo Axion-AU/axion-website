@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       to: toEmail,
       subject: `New Collaboration Inquiry from ${name}`,
       reply_to: email,
-      react: CollaborateFormEmail({ name, email, expertise, message }),
+      react: <CollaborateFormEmail name={name} email={email} expertise={expertise} message={message} />,
     });
 
     if (error) {
