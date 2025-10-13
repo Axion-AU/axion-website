@@ -47,21 +47,27 @@ export function Footer() {
             <h3 className="font-semibold font-headline text-lg">Connect</h3>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://x.com/axionventuresau"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Twitter"
                 className="text-muted-foreground hover:text-accent transition-colors"
               >
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/axion-ventures-au"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="text-muted-foreground hover:text-accent transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://github.com/axionventures"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="text-muted-foreground hover:text-accent transition-colors"
               >
