@@ -79,7 +79,7 @@ export function Footer() {
         <div className="py-6 border-t border-border/40 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Axion Ventures. All rights
-            reserved.
+            reserved. | ABN: 31 279 957 127
           </p>
         </div>
       </div>

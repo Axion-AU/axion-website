@@ -33,14 +33,14 @@ export default function ContactPage() {
                 <h3 className="font-semibold">Email</h3>
                 <p className="text-muted-foreground">General Inquiries</p>
                 <a
-                  href="mailto:hello@axion.ventures"
+                  href="mailto:hello@axionventures.com.au"
                   className="text-accent hover:underline"
                 >
-                  hello@axion.ventures
+                  hello@axionventures.com.au
                 </a>
               </div>
             </div>
-            <div className="flex items-start gap-4">
+            {/* <div className="flex items-start gap-4">
               <div className="p-3 bg-muted rounded-md">
                 <Phone className="w-5 h-5 text-accent" />
               </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                   +1 (234) 567-890
                 </a>
               </div>
-            </div>
+            </div> */}
             <div className="flex items-start gap-4">
               <div className="p-3 bg-muted rounded-md">
                 <MapPin className="w-5 h-5 text-accent" />
