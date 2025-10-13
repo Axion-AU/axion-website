@@ -6,7 +6,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { BrainCircuit, Handshake, Lightbulb } from "lucide-react";
+import { BrainCircuit, Handshake, Lightbulb, Info } from "lucide-react";
 
 export default function CollaboratePage() {
   return (
@@ -15,22 +15,25 @@ export default function CollaboratePage() {
         <div className="space-y-8">
           <div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
-              Collaborate With Us
+              Become a Founding Partner
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Axion Ventures is a venture studio building scalable, ethical, and technically sophisticated companies. We're looking for partners with a builder mentality to join us.
+              Axion Ventures is an early-stage venture studio, currently developing its flagship project, Nexus, and building a portfolio of high-impact startups.
             </p>
           </div>
           
-          <div className="space-y-4 text-muted-foreground">
-            <p>
-              As a founding collaborator, you have the opportunity to help
-              define the future of our ventures and take a meaningful stake in
-              their success. Our projects are intentionally incubated within
-              Axion, allowing us to consolidate intellectual property, refine
-              our products, and maximize impact before scaling commercially.
-            </p>
-          </div>
+          <Card className="bg-card/50 border-accent">
+            <CardHeader className="flex-row items-center gap-4">
+              <Info className="w-8 h-8 text-accent"/>
+              <div className="flex flex-col">
+                <CardTitle>A Ground-Floor Opportunity</CardTitle>
+                <CardDescription>Note: Axion is a pre-startup, pre-funding solo venture.</CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">This is your chance to get in at the very beginning. As a founding collaborator, you will play a critical role in shaping the company, its culture, and its ventures from the ground up, with a meaningful stake in its success.</p>
+            </CardContent>
+          </Card>
 
           <div>
              <h2 className="text-2xl font-semibold font-headline text-foreground mb-6">
@@ -68,7 +71,7 @@ export default function CollaboratePage() {
           </div>
           
           <p className="text-lg text-foreground pt-4 border-t border-border/40">
-            If you thrive on high-leverage opportunities and believe in building ventures the right way, we would love to hear from you.
+            If you have a builder mentality and thrive on high-leverage opportunities, we would love to hear from you.
           </p>
         </div>
         <div>
@@ -78,7 +81,7 @@ export default function CollaboratePage() {
                 Get in Touch
               </CardTitle>
               <CardDescription>
-                Fill out the form below to start a conversation.
+                Fill out the form below to start a conversation about becoming a foundational partner.
               </CardDescription>
             </CardHeader>
             <CardContent>
