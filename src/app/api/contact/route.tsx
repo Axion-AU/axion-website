@@ -1,17 +1,26 @@
+
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
 
 export const runtime = 'edge';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmail = process.env.FORM_SUBMISSION_EMAIL;
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const TO_EMAIL = process.env.FORM_SUBMISSION_EMAIL;
+const FROM_EMAIL = 'onboarding@resend.dev';
 
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
-    if (!toEmail) {
+    if (!TO_EMAIL) {
       console.error('FORM_SUBMISSION_EMAIL environment variable is not set.');
+      return NextResponse.json(
+        { error: 'Server configuration error.' },
+        { status: 500 }
+      );
+    }
+
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY environment variable is not set.');
       return NextResponse.json(
         { error: 'Server configuration error.' },
         { status: 500 }
@@ -26,20 +35,32 @@ export async function POST(request: Request) {
       ${message}
     `;
 
-    const { data, error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
-      to: toEmail,
-      subject: `New Message from ${name} via Axion Ventures`,
-      reply_to: email,
-      text: emailBody,
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: `Contact Form <${FROM_EMAIL}>`,
+        to: [TO_EMAIL],
+        subject: `New Message from ${name} via Axion Ventures`,
+        text: emailBody,
+        reply_to: email,
+      }),
     });
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (res.ok) {
+        const data = await res.json();
+        return NextResponse.json(data);
+    } else {
+        const error = await res.json();
+        console.error('Resend API Error:', error);
+        return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
     }
 
-    return NextResponse.json({ message: 'Email sent successfully!' });
   } catch (e: any) {
+    console.error('Error in /api/contact:', e);
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
