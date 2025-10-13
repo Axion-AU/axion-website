@@ -6,6 +6,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/ventures', label: 'Ventures' },
   { href: '/approach', label: 'Approach' },
+  { href: '/culture', label: 'Culture' },
   { href: '/collaborate', label: 'Collaborate' },
   { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
