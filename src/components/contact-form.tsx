@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,7 +35,9 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log("Contact form submitted with values:", values);
     try {
+      console.log("Attempting to send contact message...");
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -42,17 +45,23 @@ export function ContactForm() {
         },
         body: JSON.stringify(values),
       });
+      
+      console.log("Received response from /api/contact:", response);
 
       if (!response.ok) {
-        throw new Error('Something went wrong.');
+        const errorData = await response.json().catch(() => ({ error: 'Failed to parse error response.' }));
+        console.error("Contact API response not OK.", "Status:", response.status, "Data:", errorData);
+        throw new Error(`Server error: ${response.statusText}`);
       }
 
+      console.log("Contact message sent successfully.");
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. We will get back to you shortly.",
       });
       form.reset();
     } catch (error) {
+       console.error("Error in onSubmit for contact form:", error);
        toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
