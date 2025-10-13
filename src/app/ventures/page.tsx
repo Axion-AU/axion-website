@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -21,7 +22,7 @@ const ventures = [
   },
   {
     name: 'SPARC',
-    slug: null,
+    slug: 'sparc',
     description:
       'An internal AI-native development engine and force multiplier. SPARC is the proprietary platform we use to rapidly prototype, build, and scale our ventures, embedding intelligence from day one.',
     status: 'Internal Tool',
