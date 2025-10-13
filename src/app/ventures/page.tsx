@@ -40,9 +40,9 @@ const ventures = [
     name: 'MagnetLab',
     slug: null,
     description:
-      "A B2B marketing automation tool from a previous venture of the founder. MagnetLab's journey taught us valuable insights into go-to-market strategies and the importance of deep customer integration.",
+      "A previous AI automation venture co-founded by Axion's founder. MagnetLab served as the incubator for the SPARC engine and provided a critical lesson: a cohesive vision and a defined business plan must exist before bringing on co-founders, eliminating the risk of foundational fractures.",
     status: 'Previous Venture',
-    tags: ['SaaS', 'Marketing', 'Lessons Learned'],
+    tags: ['SaaS', 'AI', 'Lessons Learned'],
   },
 ];
 
