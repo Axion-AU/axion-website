@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Axion Ventures Collaborate Form <noreply@axionventures.com.au>',
+      from: 'Acme <onboarding@resend.dev>',
       to: toEmail,
       subject: `New Collaboration Inquiry from ${name}`,
       reply_to: email,
