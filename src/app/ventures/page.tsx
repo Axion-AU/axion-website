@@ -30,7 +30,7 @@ const ventures = [
   },
   {
     name: 'MunchRun',
-    slug: null,
+    slug: 'munchrun',
     description:
       "A food delivery logistics platform. The lessons learned from MunchRun's operational challenges informed our current focus on scalable, software-centric ventures.",
     status: 'Archived',
