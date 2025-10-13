@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { CollaborateFormEmail } from '@/emails/collaborate-form-email';
 
 export const runtime = 'edge';
 
@@ -11,17 +10,30 @@ export async function POST(request: Request) {
   try {
     const { name, email, expertise, message } = await request.json();
 
-     if (!toEmail) {
-      console.error("FORM_SUBMISSION_EMAIL environment variable is not set.");
-      return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
+    if (!toEmail) {
+      console.error('FORM_SUBMISSION_EMAIL environment variable is not set.');
+      return NextResponse.json(
+        { error: 'Server configuration error.' },
+        { status: 500 }
+      );
     }
-    
+
+    const emailBody = `
+      New Collaboration Inquiry from Axion Ventures\n\n
+      From: ${name}\n
+      Email: ${email}\n\n
+      Interest / Expertise:\n
+      ${expertise}\n\n
+      Additional Message:\n
+      ${message || 'N/A'}
+    `;
+
     const { data, error } = await resend.emails.send({
       from: 'Collaborate <onboarding@resend.dev>',
       to: toEmail,
       subject: `New Collaboration Inquiry from ${name}`,
       reply_to: email,
-      react: <CollaborateFormEmail name={name} email={email} expertise={expertise} message={message} />,
+      text: emailBody,
     });
 
     if (error) {
