@@ -44,14 +44,31 @@ export function CollaborateForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. We'll be in touch soon.",
-    });
-    form.reset();
+    try {
+      const response = await fetch('/api/collaborate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error('Something went wrong.');
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your interest. We'll be in touch soon.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request. Please try again.",
+      });
+    }
   }
 
   return (
