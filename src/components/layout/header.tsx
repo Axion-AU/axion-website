@@ -2,28 +2,39 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
 
-const navLinks = [
+const mainNavLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/ventures", label: "Ventures" },
+];
+
+const companyNavLinks = [
+  { href: "/about", label: "About Us" },
   { href: "/approach", label: "Approach" },
   { href: "/culture", label: "Culture" },
-  { href: "/collaborate", label: "Collaborate" },
   { href: "/team", label: "Team" },
-  { href: "/contact", label: "Contact" },
 ];
+
+const contactLink = { href: "/contact", label: "Contact" };
 
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  const allNavLinks = [...mainNavLinks, ...companyNavLinks, contactLink];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -35,7 +46,7 @@ export function Header() {
           </span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm md:flex">
-          {navLinks.map((link) => (
+          {mainNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -49,6 +60,48 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className={cn(
+                  "flex items-center gap-1 transition-colors hover:text-accent px-0",
+                  companyNavLinks.some((link) => pathname.startsWith(link.href))
+                    ? "text-accent font-semibold"
+                    : "text-muted-foreground",
+                  "hover:bg-transparent"
+                )}
+              >
+                Company <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {companyNavLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      pathname === link.href ? "font-semibold text-accent" : ""
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link
+            key={contactLink.href}
+            href={contactLink.href}
+            className={cn(
+              "transition-colors hover:text-accent",
+              pathname === contactLink.href
+                ? "text-accent font-semibold"
+                : "text-muted-foreground"
+            )}
+          >
+            {contactLink.label}
+          </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <Button asChild className="hidden md:inline-flex" variant="outline">
@@ -72,7 +125,7 @@ export function Header() {
                   <span className="font-bold font-headline">Axion Ventures</span>
                 </Link>
                 <nav className="flex flex-col gap-y-2">
-                  {navLinks.map((link) => (
+                  {allNavLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
@@ -87,6 +140,9 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                  <Button asChild variant="outline" className="mt-4">
+                    <Link href="/collaborate" onClick={() => setIsMobileMenuOpen(false)}>Collaborate</Link>
+                  </Button>
                 </nav>
               </div>
             </SheetContent>

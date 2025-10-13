@@ -7,7 +7,6 @@ const navLinks = [
   { href: '/ventures', label: 'Ventures' },
   { href: '/approach', label: 'Approach' },
   { href: '/culture', label: 'Culture' },
-  { href: '/collaborate', label: 'Collaborate' },
   { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -41,6 +40,12 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
+               <Link
+                  href="/collaborate"
+                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                >
+                  Collaborate
+                </Link>
             </nav>
           </div>
 
