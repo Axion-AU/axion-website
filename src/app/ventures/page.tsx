@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -14,12 +13,21 @@ import { Separator } from '@/components/ui/separator';
 
 const ventures = [
   {
+    name: 'Zetto',
+    category: 'Active Ventures',
+    slug: 'zetto',
+    description:
+      'A voice-first Japanese training app that measures spoken production in real time and progressively increases difficulty based on performance. Android + PWA first, iOS later.',
+    status: 'In Development',
+    tags: ['EdTech', 'Language Learning', 'Mobile'],
+  },
+  {
     name: 'Nexus',
-    category: 'Current Incubating Ventures',
+    category: 'On Hold',
     slug: 'nexus',
     description:
-      'A financial wellness application designed for couples. Nexus aims to simplify shared finances, promote transparency, and help partners achieve their financial goals together.',
-    status: 'Active',
+      'A financial wellness platform for couples that replaces guilt-driven budgeting with collaborative money management. Proof of concept complete. On hold pending funding.',
+    status: 'On Hold',
     tags: ['FinTech', 'Wellness', 'B2C'],
   },
   {
@@ -27,7 +35,7 @@ const ventures = [
     category: 'Internal Tools',
     slug: 'sparc',
     description:
-      'An internal AI-native development engine and force multiplier. SPARC is the proprietary platform we use to rapidly prototype, build, and scale our ventures, embedding intelligence from day one.',
+      'A TDD-first AI development methodology using a multi-agent architecture. It turns a solo founder into a small team. PoliCRM was built in 48 hours with it.',
     status: 'Internal Tool',
     tags: ['AI', 'Development', 'Internal Tool'],
   },
@@ -36,7 +44,7 @@ const ventures = [
     category: 'Previous Ventures',
     slug: 'munchrun',
     description:
-      "A food delivery logistics platform. The lessons learned from MunchRun's operational challenges informed our current focus on scalable, software-centric ventures.",
+      "A food delivery logistics platform. The lessons learned from MunchRun's operational challenges informed the current focus on scalable, software-centric ventures.",
     status: 'Archived',
     tags: ['Logistics', 'FoodTech', 'Lessons Learned'],
   },
@@ -45,7 +53,7 @@ const ventures = [
     category: 'Previous Ventures',
     slug: 'magnetlab',
     description:
-      "A previous AI automation venture co-founded by Axion's founder. MagnetLab served as the incubator for the SPARC engine and provided a critical lesson: a cohesive vision must exist before bringing on co-founders.",
+      "A previous AI automation venture co-founded by Axion's founder. MagnetLab served as the incubator for the SPARC methodology and provided a critical lesson: a cohesive vision must exist before bringing on co-founders.",
     status: 'Previous Venture',
     tags: ['SaaS', 'AI', 'Lessons Learned'],
   },
@@ -61,27 +69,28 @@ const ventures = [
 ];
 
 const ventureCategories = [
-  "Current Incubating Ventures",
-  "Internal Tools",
-  "Previous Ventures"
-]
+  'Active Ventures',
+  'On Hold',
+  'Internal Tools',
+  'Previous Ventures',
+];
 
 export default function VenturesPage() {
   return (
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
       <div className="flex flex-col items-center text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
-          Our Ventures
+          The Ventures
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          A portfolio of current projects, internal tools, and past explorations that shape our
-          strategic evolution.
+          Active projects, internal tools, and past explorations. No &ldquo;coming soon&rdquo; teases — when
+          the next one ships, it gets added here.
         </p>
       </div>
-      
+
       <div className="space-y-16">
-        {ventureCategories.map(category => {
-          const categoryVentures = ventures.filter(v => v.category === category);
+        {ventureCategories.map((category) => {
+          const categoryVentures = ventures.filter((v) => v.category === category);
           if (categoryVentures.length === 0) return null;
 
           return (
@@ -97,10 +106,10 @@ export default function VenturesPage() {
                         </CardTitle>
                         <Badge
                           variant={
-                            venture.status === 'Active' ? 'default' : 'secondary'
+                            venture.status === 'In Development' ? 'default' : 'secondary'
                           }
                           className={
-                            venture.status === 'Active'
+                            venture.status === 'In Development'
                               ? 'bg-accent text-accent-foreground'
                               : ''
                           }
@@ -136,7 +145,7 @@ export default function VenturesPage() {
                 ))}
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>

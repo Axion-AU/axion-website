@@ -71,11 +71,15 @@ export default function NexusVenturePage() {
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline text-accent">
             Nexus
           </h1>
+          <p className="text-2xl font-semibold text-foreground/80">
+            Your bank is built for One. Your life is built for Two.
+          </p>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A personal-first, consent-driven financial operating system
-            designed specifically for couples and partnerships.
+            A financial wellness platform for couples that replaces guilt-driven budgeting with
+            collaborative money management.
           </p>
           <div className="flex justify-center flex-wrap gap-2">
+            <Badge variant="secondary">On Hold</Badge>
             <Badge variant="outline">FinTech</Badge>
             <Badge variant="outline">Wellness</Badge>
             <Badge variant="outline">B2C</Badge>
@@ -239,9 +243,9 @@ export default function NexusVenturePage() {
         </section>
 
         <div className="text-center pt-8">
-            <p className="text-lg text-muted-foreground mb-6">Nexus is poised for sustainable growth and strong market differentiation. We are seeking a capital and network co-founder to help us launch and scale this vision.</p>
+            <p className="text-lg text-muted-foreground mb-6">Nexus is on hold pending funding. The proof of concept is complete. If you&apos;re interested in backing it, get in touch.</p>
           <Button asChild size="lg">
-            <Link href="/collaborate">Partner with Us</Link>
+            <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
       </div>

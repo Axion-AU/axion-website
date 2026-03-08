@@ -22,10 +22,7 @@ const mainNavLinks = [
 ];
 
 const companyNavLinks = [
-  { href: "/about", label: "About Us" },
-  { href: "/approach", label: "Approach" },
-  { href: "/culture", label: "Culture" },
-  { href: "/team", label: "Team" },
+  { href: "/about", label: "About" },
 ];
 
 const contactLink = { href: "/contact", label: "Contact" };
@@ -60,36 +57,17 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className={cn(
-                  "flex items-center gap-1 transition-colors hover:text-accent px-0",
-                  companyNavLinks.some((link) => pathname.startsWith(link.href))
-                    ? "text-accent font-semibold"
-                    : "text-muted-foreground",
-                  "hover:bg-transparent"
-                )}
-              >
-                Company <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              {companyNavLinks.map((link) => (
-                <DropdownMenuItem key={link.href} asChild>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      pathname === link.href ? "font-semibold text-accent" : ""
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Link
+            href="/about"
+            className={cn(
+              "transition-colors hover:text-accent",
+              pathname === "/about"
+                ? "text-accent font-semibold"
+                : "text-muted-foreground"
+            )}
+          >
+            About
+          </Link>
           <Link
             key={contactLink.href}
             href={contactLink.href}
@@ -104,9 +82,6 @@ export function Header() {
           </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
-          <Button asChild className="hidden md:inline-flex" variant="outline">
-            <Link href="/collaborate">Collaborate</Link>
-          </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -140,9 +115,6 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                  <Button asChild variant="outline" className="mt-4">
-                    <Link href="/collaborate" onClick={() => setIsMobileMenuOpen(false)}>Collaborate</Link>
-                  </Button>
                 </nav>
               </div>
             </SheetContent>

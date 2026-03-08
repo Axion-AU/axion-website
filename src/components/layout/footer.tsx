@@ -5,9 +5,6 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/ventures', label: 'Ventures' },
-  { href: '/approach', label: 'Approach' },
-  { href: '/culture', label: 'Culture' },
-  { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -24,7 +21,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm">
-              Building ventures that scale. Ethically. Intelligently. Together.
+              One founder. One methodology. One venture at a time.
             </p>
           </div>
 
@@ -40,12 +37,6 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
-               <Link
-                  href="/collaborate"
-                  className="text-muted-foreground hover:text-accent transition-colors text-sm"
-                >
-                  Collaborate
-                </Link>
             </nav>
           </div>
 
