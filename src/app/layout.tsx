@@ -75,7 +75,7 @@ export default function RootLayout({
   };
   
   return (
-    <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -84,14 +84,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon-32.png" sizes="32x32" />
         <link rel="icon" href="/favicon-192.png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0ea5e9" />
-        <meta name="theme-color" content="#0b0f1a" />
+        <meta name="theme-color" content="#F8F6F3" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <Script
           id="json-ld"

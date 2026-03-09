@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Poppins', 'sans-serif'],
-        code: ['monospace'],
+        headline: ['"Instrument Serif"', 'Georgia', 'serif'],
+        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        mono: ['"DM Mono"', '"DM Sans"', 'monospace'],
+        code: ['"DM Mono"', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',

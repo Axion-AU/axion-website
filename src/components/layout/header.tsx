@@ -2,114 +2,103 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
 
-const mainNavLinks = [
+const navLinks = [
   { href: "/", label: "Home" },
   { href: "/ventures", label: "Ventures" },
-];
-
-const companyNavLinks = [
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
-
-const contactLink = { href: "/contact", label: "Contact" };
 
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  const allNavLinks = [...mainNavLinks, ...companyNavLinks, contactLink];
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Logo className="h-6 w-6 text-accent" />
-          <span className="hidden font-bold sm:inline-block font-headline">
+    <header
+      className="sticky top-0 z-50 w-full border-b bg-[#F8F6F3]/95 backdrop-blur supports-[backdrop-filter]:bg-[#F8F6F3]/80"
+      style={{ borderColor: "rgba(28, 25, 23, 0.08)" }}
+    >
+      <div className="container flex h-14 max-w-screen-xl items-center px-4">
+        {/* Wordmark */}
+        <Link href="/" className="mr-8 flex items-center gap-3">
+          <Logo className="h-6 w-6 flex-shrink-0" />
+          <span
+            className="hidden sm:inline-block font-mono text-xs uppercase tracking-[0.08em] text-[#1C1917]"
+            style={{ fontFamily: '"DM Mono", monospace' }}
+          >
             Axion Ventures
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm md:flex">
-          {mainNavLinks.map((link) => (
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-6 text-sm md:flex flex-1">
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "transition-colors hover:text-accent",
+                "transition-colors duration-200 text-sm",
                 pathname === link.href
-                  ? "text-accent font-semibold"
-                  : "text-muted-foreground"
+                  ? "text-[#1C1917]"
+                  : "text-[#78716C] hover:text-[#2563EB]"
               )}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/about"
-            className={cn(
-              "transition-colors hover:text-accent",
-              pathname === "/about"
-                ? "text-accent font-semibold"
-                : "text-muted-foreground"
-            )}
-          >
-            About
-          </Link>
-          <Link
-            key={contactLink.href}
-            href={contactLink.href}
-            className={cn(
-              "transition-colors hover:text-accent",
-              pathname === contactLink.href
-                ? "text-accent font-semibold"
-                : "text-muted-foreground"
-            )}
-          >
-            {contactLink.label}
-          </Link>
         </nav>
-        <div className="flex flex-1 items-center justify-end gap-2">
+
+        {/* Mobile menu */}
+        <div className="flex flex-1 items-center justify-end gap-2 md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-[#1C1917] hover:bg-[#EFECE8]"
+                aria-label="Toggle Menu"
+              >
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px]">
-              <div className="mt-6 flex flex-col gap-y-4">
+            <SheetContent
+              side="right"
+              className="w-[280px] bg-[#F8F6F3] border-l"
+              style={{ borderColor: "rgba(28, 25, 23, 0.08)" }}
+            >
+              <div className="mt-6 flex flex-col gap-y-6">
                 <Link
                   href="/"
-                  className="flex items-center space-x-2"
+                  className="flex items-center gap-3"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Logo className="h-6 w-6 text-accent" />
-                  <span className="font-bold font-headline">Axion Ventures</span>
+                  <Logo className="h-6 w-6" />
+                  <span
+                    className="font-mono text-xs uppercase tracking-[0.08em] text-[#1C1917]"
+                    style={{ fontFamily: '"DM Mono", monospace' }}
+                  >
+                    Axion Ventures
+                  </span>
                 </Link>
-                <nav className="flex flex-col gap-y-2">
-                  {allNavLinks.map((link) => (
+                <nav className="flex flex-col gap-y-1">
+                  {navLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        "py-2 text-lg font-medium transition-colors hover:text-accent",
+                        "py-2 text-base transition-colors duration-200",
                         pathname === link.href
-                          ? "text-accent"
-                          : "text-foreground"
+                          ? "text-[#1C1917]"
+                          : "text-[#78716C] hover:text-[#2563EB]"
                       )}
                     >
                       {link.label}
