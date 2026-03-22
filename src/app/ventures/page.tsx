@@ -1,147 +1,191 @@
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
-import { Separator } from '@/components/ui/separator';
 
 const ventures = [
   {
     name: 'Zetto',
-    category: 'Active Ventures',
     slug: 'zetto',
+    category: 'Active',
+    tagline: 'The gym for your Japanese.',
     description:
       'A voice-first Japanese training app that measures spoken production in real time and progressively increases difficulty based on performance. Android + PWA first, iOS later.',
-    status: 'In Development',
-    tags: ['EdTech', 'Language Learning', 'Mobile'],
+    status: 'In development',
+    statusActive: true,
   },
   {
     name: 'Nexus',
-    category: 'On Hold',
     slug: 'nexus',
+    category: 'On Hold',
+    tagline: 'Your bank is built for One. Your life is built for Two.',
     description:
       'A financial wellness platform for couples that replaces guilt-driven budgeting with collaborative money management. Proof of concept complete. On hold pending funding.',
-    status: 'On Hold',
-    tags: ['FinTech', 'Wellness', 'B2C'],
+    status: 'On hold',
+    statusActive: false,
   },
   {
     name: 'SPARC',
-    category: 'Internal Tools',
     slug: 'sparc',
+    category: 'Internal',
+    tagline: null,
     description:
       'A TDD-first AI development methodology using a multi-agent architecture. It turns a solo founder into a small team. PoliCRM was built in 48 hours with it.',
-    status: 'Internal Tool',
-    tags: ['AI', 'Development', 'Internal Tool'],
+    status: 'Internal tool',
+    statusActive: false,
   },
   {
     name: 'MunchRun',
-    category: 'Previous Ventures',
     slug: 'munchrun',
+    category: 'Previous',
+    tagline: null,
     description:
       "A food delivery logistics platform. The lessons learned from MunchRun's operational challenges informed the current focus on scalable, software-centric ventures.",
     status: 'Archived',
-    tags: ['Logistics', 'FoodTech', 'Lessons Learned'],
+    statusActive: false,
   },
   {
     name: 'MagnetLab',
-    category: 'Previous Ventures',
     slug: 'magnetlab',
+    category: 'Previous',
+    tagline: null,
     description:
       "A previous AI automation venture co-founded by Axion's founder. MagnetLab served as the incubator for the SPARC methodology and provided a critical lesson: a cohesive vision must exist before bringing on co-founders.",
-    status: 'Previous Venture',
-    tags: ['SaaS', 'AI', 'Lessons Learned'],
+    status: 'Previous venture',
+    statusActive: false,
   },
   {
     name: 'Merry Berry Açaí',
-    category: 'Previous Ventures',
     slug: 'merry-berry-acai',
+    category: 'Previous',
+    tagline: null,
     description:
       'A student project that became a valuable case study in motivation, accountability, and the challenges of remote collaboration in a distributed, volunteer-based team.',
-    status: 'Case Study',
-    tags: ['Teamwork', 'Motivation', 'Lessons Learned'],
+    status: 'Case study',
+    statusActive: false,
   },
 ];
 
-const ventureCategories = [
-  'Active Ventures',
-  'On Hold',
-  'Internal Tools',
-  'Previous Ventures',
+const categories = [
+  { key: 'Active', label: 'Active Ventures' },
+  { key: 'On Hold', label: 'On Hold' },
+  { key: 'Internal', label: 'Internal Tools' },
+  { key: 'Previous', label: 'Previous Ventures' },
 ];
+
+const monoStyle = { fontFamily: '"DM Mono", monospace' };
+const serifStyle = { fontFamily: '"Instrument Serif", Georgia, serif' };
+const sansLightStyle = { fontFamily: '"DM Sans", system-ui, sans-serif', fontWeight: 300 };
 
 export default function VenturesPage() {
   return (
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
-      <div className="flex flex-col items-center text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
+
+      {/* Page header */}
+      <div className="mb-16 max-w-2xl">
+        <p
+          className="text-[10px] uppercase tracking-[0.12em] text-[#78716C] mb-4"
+          style={monoStyle}
+        >
+          Portfolio
+        </p>
+        <h1
+          className="text-[clamp(2rem,5vw,3rem)] leading-tight text-[#1C1917] mb-4"
+          style={serifStyle}
+        >
           The Ventures
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Active projects, internal tools, and past explorations. No &ldquo;coming soon&rdquo; teases — when
-          the next one ships, it gets added here.
+        <p
+          className="text-base text-[#44403C] leading-relaxed"
+          style={sansLightStyle}
+        >
+          Active projects, internal tools, and past explorations. No &ldquo;coming soon&rdquo; teases
+          — when the next one ships, it gets added here.
         </p>
       </div>
 
-      <div className="space-y-16">
-        {ventureCategories.map((category) => {
-          const categoryVentures = ventures.filter((v) => v.category === category);
+      {/* Categories */}
+      <div className="space-y-20">
+        {categories.map(({ key, label }) => {
+          const categoryVentures = ventures.filter((v) => v.category === key);
           if (categoryVentures.length === 0) return null;
 
           return (
-            <div key={category}>
-              <h2 className="text-3xl font-bold font-headline mb-8 text-center">{category}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div key={key}>
+              {/* Category section label */}
+              <div
+                className="flex items-center gap-6 mb-8"
+                style={{ borderBottom: '1px solid rgba(28,25,23,0.08)', paddingBottom: '12px' }}
+              >
+                <p
+                  className="text-[10px] uppercase tracking-[0.12em] text-[#78716C]"
+                  style={monoStyle}
+                >
+                  {label}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {categoryVentures.map((venture) => (
-                  <Card key={venture.name} className="flex flex-col bg-card/50">
-                    <CardHeader>
-                      <div className="flex justify-between items-start">
-                        <CardTitle className="text-2xl font-headline">
-                          {venture.name}
-                        </CardTitle>
-                        <Badge
-                          variant={
-                            venture.status === 'In Development' ? 'default' : 'secondary'
-                          }
-                          className={
-                            venture.status === 'In Development'
-                              ? 'bg-accent text-accent-foreground'
-                              : ''
-                          }
+                  <article
+                    key={venture.name}
+                    className="venture-card bg-white p-8 flex flex-col gap-5"
+                  >
+                    {/* Status */}
+                    <p
+                      className="text-[10px] uppercase tracking-[0.10em] inline-flex items-center gap-1.5"
+                      style={{
+                        ...monoStyle,
+                        color: venture.statusActive ? '#2563EB' : '#78716C',
+                        backgroundColor: venture.statusActive
+                          ? 'rgba(37,99,235,0.08)'
+                          : 'rgba(28,25,23,0.05)',
+                        width: 'fit-content',
+                        padding: '3px 8px',
+                        borderRadius: '2px',
+                      }}
+                    >
+                      <span
+                        className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: venture.statusActive ? '#2563EB' : '#78716C',
+                        }}
+                      />
+                      {venture.status}
+                    </p>
+
+                    {/* Name + tagline */}
+                    <div>
+                      <h2
+                        className="text-[1.5rem] leading-tight text-[#1C1917] mb-1"
+                        style={serifStyle}
+                      >
+                        {venture.name}
+                      </h2>
+                      {venture.tagline && (
+                        <p
+                          className="text-[#44403C]"
+                          style={{ ...serifStyle, fontStyle: 'italic', fontSize: '0.95rem' }}
                         >
-                          {venture.status}
-                        </Badge>
-                      </div>
-                      <CardDescription>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {venture.tags.map((tag) => (
-                            <Badge key={tag} variant="outline">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-muted-foreground">{venture.description}</p>
-                    </CardContent>
-                    <CardFooter>
-                      {venture.slug ? (
-                        <Button asChild variant="outline" className="w-full">
-                          <Link href={`/ventures/${venture.slug}`}>Learn More</Link>
-                        </Button>
-                      ) : (
-                        <Button variant="outline" className="w-full" disabled>
-                          Learn More
-                        </Button>
+                          {venture.tagline}
+                        </p>
                       )}
-                    </CardFooter>
-                  </Card>
+                    </div>
+
+                    {/* Description */}
+                    <p
+                      className="text-sm text-[#44403C] leading-relaxed flex-grow"
+                      style={sansLightStyle}
+                    >
+                      {venture.description}
+                    </p>
+
+                    {/* Link */}
+                    <Link
+                      href={`/ventures/${venture.slug}`}
+                      className="text-[13px] text-[#78716C] transition-colors duration-200 hover:text-[#2563EB] self-start"
+                      style={monoStyle}
+                    >
+                      Learn more →
+                    </Link>
+                  </article>
                 ))}
               </div>
             </div>
