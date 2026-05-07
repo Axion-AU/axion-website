@@ -13,16 +13,13 @@ export default function ContactPage() {
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
       <div className="flex flex-col items-center text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
-          Contact Us
+          Say hello.
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Have a question or a proposal? We'd love to hear from you.
-        </p>
       </div>
       <div className="grid lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2 space-y-8">
           <h2 className="text-2xl font-semibold font-headline text-foreground">
-            Contact Information
+            Where to find me
           </h2>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
@@ -99,7 +96,7 @@ export default function ContactPage() {
               <CardTitle className="text-2xl font-headline">
                 Send us a message
               </CardTitle>
-              <CardDescription>We'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>I&apos;ll get back to you.</CardDescription>
             </CardHeader>
             <CardContent>
               <ContactForm />

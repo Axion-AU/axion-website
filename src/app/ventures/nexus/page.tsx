@@ -88,17 +88,17 @@ export default function NexusVenturePage() {
 
         <section className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground max-w-none">
             <p className="lead">
-                Nexus solves a real, persistent problem: managing money together
-                shouldn’t be a source of anxiety or friction. It's built to be the central link where an individual's financial sovereignty connects with shared financial goals, helping couples grow wealth together while protecting what belongs to the individual.
-            </p>
-            <p>
-                The core mission is to replace traditional banking systems, which are typically designed for individuals and often create friction, with a system built on clarity, collaboration, and resilience. The goal is to remove the ambiguity of money so couples can focus on life together.
+                Most couples fight about money. Not because they&apos;re bad at it — because
+                the tools weren&apos;t built for two people. Banks are built for individuals.
+                Budgeting apps are built for individuals. Every shared financial decision
+                involves workarounds, screenshots, and arguments about whose version of the
+                spreadsheet is right. Nexus is built for two.
             </p>
         </section>
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Nexus Constitution
+            The Constitution
           </h2>
           <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
             <AccordionItem value="item-1">
@@ -138,7 +138,7 @@ export default function NexusVenturePage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Four Engines of Nexus
+            Four Engines
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-card/50">
@@ -198,9 +198,9 @@ export default function NexusVenturePage() {
 
          <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Nexus Way Budgeting Model
+            The Budget Split
           </h2>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">The system utilizes a budget framework known as The Nexus Way, which allocates funds into four strategic buckets following an optimal 50/25/15/10% split.</p>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">50/25/15/10. Essentials, growth, stability, guilt-free spending. In that order.</p>
            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {budgetSplit.map((item) => (
                 <Card key={item.category} className="bg-card/50 border-border/50">
@@ -218,7 +218,7 @@ export default function NexusVenturePage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            Progression Framework: Crawl, Walk, Run, Fly
+            Crawl, Walk, Run, Fly
           </h2>
           <Card className="bg-card/50">
             <Table>
