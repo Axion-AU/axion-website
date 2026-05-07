@@ -1,8 +1,6 @@
 
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
-
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMAIL = process.env.FORM_SUBMISSION_EMAIL;
 const FROM_EMAIL = 'onboarding@resend.dev';
