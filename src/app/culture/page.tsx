@@ -19,33 +19,33 @@ import {
 const lessons = [
   {
     icon: GitMerge,
-    title: ‘The MagnetLab Lesson’,
+    title: 'The MagnetLab Lesson',
     content:
-      ‘Bring people on before you have a clear vision and you don’t get a team. You get a committee. Alignment precedes acceleration.’,
+      "Bring people on before you have a clear vision and you don't get a team. You get a committee. Alignment precedes acceleration.",
   },
   {
     icon: ShieldCheck,
     title: 'The Nexus Lesson: Design for Trust, Not Just Engagement',
     content:
-      'Financial technology, like human relationships, lives or dies on perceived safety. Every product decision must start with the question: “Could this feature ever harm trust?” Axion ventures follow a Constitutional Design framework—every system must protect user sovereignty, informed consent, and data dignity. We don’t just build intelligent products; we build trustworthy systems.',
+      "Financial technology, like human relationships, lives or dies on perceived safety. Every product decision must start with the question: \"Could this feature ever harm trust?\" Axion ventures follow a Constitutional Design framework — every system must protect user sovereignty, informed consent, and data dignity. We don't just build intelligent products; we build trustworthy systems.",
   },
   {
     icon: Users,
-    title: ‘The Merry Berry Lesson: Motivation and Accountability’,
+    title: 'The Merry Berry Lesson: Motivation and Accountability',
     content:
-      ‘In distributed teams, motivation can evaporate fast. The fix isn’t more check-ins — it’s being ruthless about who owns what. Every project has a Directly Responsible Individual. One person. Not a committee. Structure is what gives autonomy its power.’,
+      "In distributed teams, motivation can evaporate fast. The fix isn't more check-ins — it's being ruthless about who owns what. Every project has a Directly Responsible Individual. One person. Not a committee. Structure is what gives autonomy its power.",
   },
   {
     icon: Cpu,
-    title: ‘The QSR & Retail Lesson: Systems Build Resilience’,
+    title: 'The QSR & Retail Lesson: Systems Build Resilience',
     content:
-      ‘I’ve opened stores at 5am with a team of two people where six were rostered. I’ve run a lunch rush where the POS went down, the supplier delivered the wrong order, and a staff member called in sick — all before 11am. What gets you through that isn’t grit, it’s the system you built on a slow Tuesday three weeks ago. Every repeatable process deserves a clear owner, a fallback plan, and measurable standards. Culture isn’t slogans. It’s the habit you run on autopilot when everything is on fire.’,
+      "I've opened stores at 5am with a team of two people where six were rostered. I've run a lunch rush where the POS went down, the supplier delivered the wrong order, and a staff member called in sick — all before 11am. What gets you through that isn't grit, it's the system you built on a slow Tuesday three weeks ago. Every repeatable process deserves a clear owner, a fallback plan, and measurable standards. Culture isn't slogans. It's the habit you run on autopilot when everything is on fire.",
   },
 ];
 
 const principles = [
     "Clarity is kindness. Every person deserves to know the why behind the work.",
-    "Documentation by default. If it isn’t written down, it doesn’t exist.",
+    "Documentation by default. If it isn't written down, it doesn't exist.",
     "Transparency over perfection. We share process, not just polish.",
 ]
 
