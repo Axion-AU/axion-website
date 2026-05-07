@@ -13,7 +13,7 @@ const results = [
   {
     title: 'PoliCRM',
     description:
-      'A political campaign CRM built in 48 hours. End-to-end: spec, architecture, implementation, and deployment.',
+      'A political campaign CRM built in 48 hours. End-to-end: spec, architecture, implementation, and deployment. It also shipped with three auth bugs that didn\'t surface until a staffer tried to log in from an iPad the night before launch. Fixed at 1am. SPARC builds fast — you still debug like a human.',
   },
   {
     title: 'Zetto Spec Suite',
@@ -61,14 +61,13 @@ export default function SparcVenturePage() {
         <section className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground max-w-none">
           <p className="lead">
             SPARC is a TDD-first AI development methodology using a multi-agent architecture.
-            It turns a solo founder into a small team. The methodology is the competitive advantage.
+            It turns a solo founder into a small team. Not a polished team — a fast, sometimes
+            scrappy team that ships real things while others are still writing specs. The
+            methodology is the competitive advantage.
           </p>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            How It Works
-          </h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <Card className="bg-card/50">
               <CardHeader>
@@ -122,9 +121,6 @@ export default function SparcVenturePage() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            Proven Results
-          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {results.map((result) => (
               <Card key={result.title} className="bg-card/50 flex flex-col">

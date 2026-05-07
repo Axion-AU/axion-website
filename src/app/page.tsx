@@ -57,26 +57,16 @@ export default function Home() {
               <em>something broken.</em>
             </h1>
 
-            {/* Sub-line */}
-            <p
-              className="animate-fadein animate-fadein-3 text-[10px] uppercase tracking-[0.10em] text-[#2563EB] mb-8"
-              style={monoStyle}
-            >
-              One founder · One methodology · One venture at a time
-            </p>
-
             {/* Body */}
             <p
-              className="animate-fadein animate-fadein-4 text-lg text-[#44403C] leading-relaxed max-w-[60ch] mb-10"
+              className="animate-fadein animate-fadein-3 text-lg text-[#44403C] leading-relaxed max-w-[60ch] mb-10"
               style={sansLightStyle}
             >
-              Axion Ventures is a solo-founder venture studio powered by SPARC, a proprietary
-              AI development methodology. Each venture targets a market where the existing
-              solutions are lazy, extractive, or just bad.
+              Most software is lazy, extractive, or just bad. I&apos;m building the stuff that isn&apos;t.
             </p>
 
             {/* CTAs */}
-            <div className="animate-fadein animate-fadein-5 flex flex-wrap gap-4">
+            <div className="animate-fadein animate-fadein-4 flex flex-wrap gap-4">
               <Link
                 href="/ventures"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-white text-sm transition-colors duration-200 hover:bg-[#1d4ed8]"
@@ -103,14 +93,6 @@ export default function Home() {
         style={{ borderTop: '1px solid rgba(28,25,23,0.08)' }}
       >
         <div className="container mx-auto max-w-screen-xl px-4">
-
-          {/* Section label */}
-          <p
-            className="mb-10 text-[10px] uppercase tracking-[0.12em] text-[#78716C]"
-            style={monoStyle}
-          >
-            The Ventures
-          </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
             {ventures.map((venture) => (
@@ -213,12 +195,6 @@ export default function Home() {
 
             {/* SPARC */}
             <div>
-              <p
-                className="text-[10px] uppercase tracking-[0.12em] text-[#78716C] mb-4"
-                style={monoStyle}
-              >
-                Methodology
-              </p>
               <h2
                 className="text-[1.75rem] text-[#1C1917] mb-4"
                 style={serifStyle}
@@ -230,9 +206,11 @@ export default function Home() {
                 style={sansLightStyle}
               >
                 SPARC is a TDD-first AI development methodology using a multi-agent
-                architecture. It turns a solo founder into a small team. PoliCRM was built
-                in 48 hours with it. Zetto&apos;s entire spec suite was designed and documented in
-                days, not months. The methodology is the competitive advantage.
+                architecture. It turns a solo founder into a small team. PoliCRM shipped in
+                48 hours — it also shipped with three auth bugs that didn&apos;t surface until a
+                campaign staffer tried to log in from an iPad at 11pm the night before launch.
+                I fixed them at 1am. That&apos;s what &ldquo;fast&rdquo; actually looks like. Zetto&apos;s entire
+                spec suite was still designed and documented in days, not months.
               </p>
               <Link
                 href="/ventures/sparc"
@@ -261,10 +239,9 @@ export default function Home() {
                 className="text-sm text-[#44403C] leading-relaxed mb-5"
                 style={sansLightStyle}
               >
-                I&apos;ve spent 13 years building systems — from retail operations to AI pipelines
-                to political campaign infrastructure. I created SPARC because I wanted to build
-                products at the speed and quality of a full team, without needing one. Axion
-                is the vehicle. The ventures are the point.
+                13 years building systems — retail operations, AI pipelines, political campaign
+                infrastructure. I created SPARC because I kept waiting on people. The ventures
+                are the point.
               </p>
               <Link
                 href="/about"
