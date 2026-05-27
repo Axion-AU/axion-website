@@ -74,21 +74,16 @@ export default function MunchRunVenturePage() {
 
         <section className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground max-w-none">
           <p className="lead">
-            MunchRun was conceptualized as an ethical delivery service aiming to
-            disrupt the market by creating a fairer, more transparent, and
-            sustainable ecosystem for drivers, restaurants, and customers.
-          </p>
-          <p>
-            The mission was to be equitable for everyone involved, holding the
-            vision of becoming a leading platform known for its fair practices
-            and exceptional service. The core values underpinning MunchRun were
-            Fairness, Transparency, Sustainability, and Innovation.
+            Zero commission for restaurants. 100% of tips to drivers. Transparent
+            pricing for customers. The ethics were genuine. The economics were also
+            genuinely unworkable — the fair-pay constraints and a viable business
+            model turned out to be incompatible. That was that.
           </p>
         </section>
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            Strategic Differentiators
+            The model
           </h2>
           <Card className="bg-card/50">
             <Table>
@@ -119,7 +114,7 @@ export default function MunchRunVenturePage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Reason for Stalling (A Key Learning)
+            Why it stopped
           </h2>
           <Card className="bg-card/50 border-accent">
             <CardHeader>
@@ -131,29 +126,21 @@ export default function MunchRunVenturePage() {
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-4">
               <p>
-                While MunchRun was a successful exercise in planning and
-                technical design, the project stalled due to an "irresolvable
-                conflict between a core ethical principle and a viable business
-                model."
+                The planning was solid. The technical design was solid. The
+                problem was that the core ethical constraint — genuinely fair pay
+                for drivers — and a viable margin structure couldn&apos;t coexist. Not
+                a fixable problem. An irresolvable one.
               </p>
               <p>
-                This outcome highlights a core principle of Axion Ventures:
-                **Calibrated Effort**. It's the discipline to know when to
-                abandon a project where fundamental objectives (like ethical
-                fairness) conflict too severely with operational reality. This
-                experience was instrumental in shifting our focus toward proving
-                capability through the SPARC engine, rather than relying solely
-                on early venture success.
+                The discipline to walk away from that, rather than quietly
+                compromise the thing that made it worth building, is something
+                worth keeping.
               </p>
             </CardContent>
           </Card>
         </section>
 
         <div className="text-center pt-8">
-          <p className="text-lg text-muted-foreground mb-6">
-            The lessons from MunchRun directly inform our robust,
-            software-first approach at Axion Ventures today.
-          </p>
           <Button asChild size="lg">
             <Link href="/collaborate">Partner with Us</Link>
           </Button>

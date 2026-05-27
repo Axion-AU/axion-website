@@ -12,12 +12,8 @@ export default function ApproachPage() {
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
       <div className="flex flex-col items-center text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
-          Our Approach
+          How it works
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          A structured framework for building and scaling ventures, ensuring
-          alignment, flexibility, and shared success.
-        </p>
       </div>
 
       <div className="relative">

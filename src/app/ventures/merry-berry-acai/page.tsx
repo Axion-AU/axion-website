@@ -47,18 +47,14 @@ export default function MerryBerryAcaiPage() {
 
         <section className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground max-w-none">
           <p className="lead">
-            Merry Berry Açaí began as the final group project in Coder
-            Academy’s Full-Stack Development Diploma — a simulated startup
-            designed to take a product from concept to launch. While the app
-            itself was a prototype, the project became something far more
-            valuable: a real-world experiment in distributed teamwork,
-            motivation, and accountability.
+            A uni project. Everyone was busy. Nobody was getting paid. The app got built
+            but the team fell apart in the middle. Classic.
           </p>
         </section>
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Challenge
+            What happened
           </h2>
           <Card className="bg-card/50">
             <CardHeader>
@@ -80,7 +76,7 @@ export default function MerryBerryAcaiPage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            The Learning
+            What it taught
           </h2>
           <Card className="bg-card/50 border-accent">
             <CardHeader>
@@ -103,11 +99,8 @@ export default function MerryBerryAcaiPage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            How It Shaped Axion
+            What changed
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
-            Merry Berry Açaí directly informed Axion’s team-building philosophy:
-          </p>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <Card className="bg-card/50">
               <CardHeader>
@@ -161,11 +154,6 @@ export default function MerryBerryAcaiPage() {
         </section>
 
         <div className="text-center pt-8">
-          <p className="text-lg text-muted-foreground mb-6">
-            This case study became part of Axion’s DNA — proving that successful
-            collaboration isn’t about perfect ideas, but resilient systems and
-            motivated teams.
-          </p>
           <Button asChild size="lg">
             <Link href="/approach">Explore Our Approach</Link>
           </Button>

@@ -13,10 +13,10 @@ export default function TeamPage() {
     <div className="container mx-auto max-w-screen-xl px-4 py-16 md:py-24">
       <div className="flex flex-col items-center text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">
-          The Founding Team
+          The Team
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Axion Ventures is currently a solo venture in its pre-startup phase, seeking foundational partners to help build the future.
+          One founder. Looking for the right people.
         </p>
       </div>
 
@@ -37,7 +37,7 @@ export default function TeamPage() {
             <h3 className="text-xl font-semibold font-headline">Ethan Cornwill</h3>
             <p className="text-sm text-accent">Founder & Chief Architect</p>
             <p className="mt-4 text-sm text-muted-foreground">
-              As the sole founder, Ethan is currently driving the vision, strategy, and technical architecture of Axion Ventures and its incubated projects.
+              Founder. 13 years building systems across retail, AI, and politics. Created SPARC. Building Zetto.
             </p>
             <div className="flex gap-4 mt-4">
               <a href="#" className="text-muted-foreground hover:text-accent">
@@ -59,7 +59,7 @@ export default function TeamPage() {
             Seeking Co-Founders
           </h3>
            <p className="mt-4 text-sm text-muted-foreground">
-            We're looking for strategic partners with expertise in funding, marketing, and network building to join as foundational co-founders.
+            Not looking for another developer. Looking for someone who knows how to get things in front of people.
           </p>
           <Button asChild variant="link" className="mt-2 text-accent">
             <Link href="/collaborate">Join Us</Link>

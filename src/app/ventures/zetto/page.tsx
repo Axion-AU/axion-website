@@ -82,7 +82,7 @@ export default function ZettoVenturePage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            What Makes Zetto Different
+            How it works
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {differentiators.map((item) => (
@@ -102,15 +102,13 @@ export default function ZettoVenturePage() {
         </section>
 
         <section className="text-center">
-          <h2 className="text-3xl font-bold font-headline mb-6">Status</h2>
           <div className="max-w-2xl mx-auto space-y-4 text-muted-foreground">
             <p>
-              Zetto is in active development. The full spec suite &mdash; system prompt, onboarding
-              flow, writing systems, branding, unit economics &mdash; was designed and documented
-              using SPARC in days, not months.
+              In active development. Full spec — system prompt, onboarding flow, writing systems,
+              branding, unit economics — designed and documented using SPARC in days, not months.
             </p>
             <p>
-              Bootstrapping toward launch. No launch date announced until it&apos;s ready to ship.
+              No launch date until it&apos;s ready.
             </p>
           </div>
         </section>

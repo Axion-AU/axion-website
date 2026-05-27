@@ -18,7 +18,7 @@ export default function CollaboratePage() {
               Become a Founding Partner
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Axion Ventures is an early-stage venture studio, currently developing its flagship project, Nexus, and building a portfolio of high-impact startups.
+              Zetto is in active development. Nexus is on hold pending funding. SPARC is the engine behind both. If you want to build something in this orbit, keep reading.
             </p>
           </div>
           
@@ -71,7 +71,7 @@ export default function CollaboratePage() {
           </div>
           
           <p className="text-lg text-foreground pt-4 border-t border-border/40">
-            If you have a builder mentality and thrive on high-leverage opportunities, we would love to hear from you.
+            If any of this resonates, get in touch.
           </p>
         </div>
         <div>

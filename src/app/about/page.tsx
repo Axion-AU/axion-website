@@ -39,9 +39,9 @@ export default function AboutPage() {
           className="text-base text-[#44403C] leading-relaxed"
           style={sansLightStyle}
         >
-          Every venture starts with something broken. A product that patronises its users.
-          A system that punishes the people it should serve. A market that confuses
-          complexity for value. Axion builds the fix.
+          Every venture starts with something broken. Usually a product that patronises its
+          users. Sometimes a whole industry that decided complexity is a feature. Axion builds
+          the fix — or at least a version that doesn&apos;t insult the people using it.
         </p>
       </div>
 
@@ -87,15 +87,15 @@ export default function AboutPage() {
           style={sansLightStyle}
         >
           <p>
-            I&apos;ve spent 13 years building systems — from retail operations to AI pipelines
-            to political campaign infrastructure.
+            13 years building systems — managing 40-person retail shifts at 2am, wiring AI
+            pipelines, running data infrastructure for a political campaign that ultimately lost.
           </p>
           <p>
-            I created SPARC because I wanted to build products at the speed and quality of
-            a full team, without needing one.
+            I created SPARC because I kept hiring people and then waiting for them to get up
+            to speed. SPARC made me faster than a team of three. Messier, sometimes, but faster.
           </p>
           <p>
-            Axion is the vehicle. The ventures are the point.
+            The ventures are the point.
           </p>
         </div>
       </div>

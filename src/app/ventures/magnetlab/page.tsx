@@ -39,13 +39,15 @@ export default function MagnetLabVenturePage() {
 
         <section className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground max-w-none">
           <p className="lead">
-            MagnetLab was an entrepreneurial venture co-founded by Axion's founder, Ethan Cornwill. Although it did not achieve commercial viability, it was a critical step in the journey, providing foundational lessons in team-building, strategy, and technology that directly inform Axion's current model.
+            MagnetLab didn&apos;t work. Two co-founders, both capable, completely misaligned on what
+            we were actually building — and neither of us wanted to say it out loud for about six
+            months too long. The venture stalled. SPARC survived.
           </p>
         </section>
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            Mission & Structure
+            What it was
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-card/50">
@@ -69,7 +71,7 @@ export default function MagnetLabVenturePage() {
 
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-10">
-            Outcome and Strategic Learnings
+            What went wrong
           </h2>
           <Card className="bg-card/50 border-accent">
             <CardHeader>
@@ -83,19 +85,16 @@ export default function MagnetLabVenturePage() {
                 The venture eventually stalled due to an irreconcilable misalignment in strategic vision between the co-founders. One path favored pivoting toward building proprietary AI solutions, while the other focused on a digital agency model.
               </p>
               <p>
-                This experience solidified a core principle of Axion Ventures: **a cohesive vision and a defined business plan must exist *before* bringing on partners.** This prevents wasted effort and ensures everyone is rowing in the same direction from day one.
+                This experience solidified a rule: <strong>a clear vision and a defined business plan must exist before bringing on partners.</strong> Not after. Bringing people in before that&apos;s settled doesn&apos;t give you momentum — it gives you a negotiation.
               </p>
-               <p className="font-semibold text-foreground">
-                The SPARC framework, having been developed independently, was retained by the founder as a personal asset and became a cornerstone of the Axion Ventures studio model.
+              <p>
+                SPARC was developed independently and stayed with me. That&apos;s now the foundation of Axion.
               </p>
             </CardContent>
           </Card>
         </section>
 
         <div className="text-center pt-8">
-          <p className="text-lg text-muted-foreground mb-6">
-            The lessons from MagnetLab are not a footnote; they are embedded in the DNA of how we build companies today.
-          </p>
           <Button asChild size="lg">
             <Link href="/approach">Explore Our Approach</Link>
           </Button>
