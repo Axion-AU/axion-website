@@ -5,25 +5,49 @@ const ventures = [
     name: 'Zetto',
     tagline: 'The gym for your Japanese.',
     description:
-      'A voice-first Japanese training app that measures spoken production in real time and progressively increases difficulty based on performance.',
-    status: 'In development',
+      'A voice-first Japanese training application that measures spoken production in real time and progressively adapts difficulty based on performance.',
+    stack: 'Decoupled Gemini 2.5 Flash API with a custom low-latency TTS pipeline.',
+    status: 'Active — engineering bench',
     statusActive: true,
     href: '/ventures/zetto',
     externalHref: 'https://zetto.app',
     externalLabel: 'zetto.app',
-    aiRole: 'The product. The Gemini Live API session is Zetto.',
+  },
+  {
+    name: 'Transport Inequality Engine',
+    tagline: null,
+    description:
+      'An interactive spatial data tool mapping Melbourne transit infrastructure to compute localized equity and transit-accessibility scores.',
+    stack: 'Rust, TypeScript, Leaflet, GTFS Open Data.',
+    status: 'Active — open source',
+    statusActive: true,
+    href: '/ventures/tie',
+    externalHref: 'https://github.com/axion-au',
+    externalLabel: 'github.com/axion-au',
   },
   {
     name: 'Nexus',
     tagline: 'Your bank is built for One. Your life is built for Two.',
     description:
-      'A financial wellness platform for couples that replaces guilt-driven budgeting with collaborative money management. Proof of concept complete, on hold pending funding.',
+      'A multi-tenant financial wellness platform for couples that replaces guilt-driven budgeting with collaborative money management. Proof of concept complete, on hold pending deployment configuration.',
+    stack: 'Next.js, TypeScript, FastAPI, PostgreSQL.',
     status: 'On hold',
     statusActive: false,
     href: '/ventures/nexus',
     externalHref: null,
     externalLabel: null,
-    aiRole: 'Data processing and pattern analysis.',
+  },
+  {
+    name: 'PoliCRM',
+    tagline: null,
+    description:
+      'A targeted platform built in 48 hours to automate the cross-referencing and verification of 911 members against live state electoral rolls, completely removing manual spreadsheet errors.',
+    stack: 'Python, FastAPI, Selenium, Rust, React.',
+    status: 'Shipped',
+    statusActive: false,
+    href: '/ventures/sparc',
+    externalHref: null,
+    externalLabel: null,
   },
 ];
 
@@ -40,17 +64,9 @@ export default function Home() {
         <div className="container mx-auto max-w-screen-xl px-4">
           <div className="max-w-3xl">
 
-            {/* Section label */}
-            <p
-              className="animate-fadein animate-fadein-1 mb-5 text-[10px] uppercase tracking-[0.12em] text-[#78716C]"
-              style={monoStyle}
-            >
-              Axion Ventures
-            </p>
-
             {/* Hero headline */}
             <h1
-              className="animate-fadein animate-fadein-2 text-[clamp(2.5rem,6vw,4rem)] leading-[1.1] text-[#1C1917] mb-6"
+              className="animate-fadein animate-fadein-1 text-[clamp(2.5rem,6vw,4rem)] leading-[1.1] text-[#1C1917] mb-6"
               style={serifStyle}
             >
               Every venture starts with<br />
@@ -59,14 +75,17 @@ export default function Home() {
 
             {/* Body */}
             <p
-              className="animate-fadein animate-fadein-3 text-lg text-[#44403C] leading-relaxed max-w-[60ch] mb-10"
+              className="animate-fadein animate-fadein-2 text-lg text-[#44403C] leading-relaxed max-w-[60ch] mb-10"
               style={sansLightStyle}
             >
-              Most software is lazy, extractive, or just bad. I&apos;m building the stuff that isn&apos;t.
+              Axion Ventures is an AI-native venture studio and open-source project incubator
+              powered by SPARC, our proprietary AI development framework. We build high-velocity
+              software assets targeting markets where existing solutions are lazy, extractive,
+              or fundamentally broken.
             </p>
 
             {/* CTAs */}
-            <div className="animate-fadein animate-fadein-4 flex flex-wrap gap-4">
+            <div className="animate-fadein animate-fadein-3 flex flex-wrap gap-4">
               <Link
                 href="/ventures"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-white text-sm transition-colors duration-200 hover:bg-[#1d4ed8]"
@@ -134,12 +153,14 @@ export default function Home() {
                   >
                     {venture.name}
                   </h2>
-                  <p
-                    className="text-[#44403C]"
-                    style={{ ...serifStyle, fontStyle: 'italic', fontSize: '1rem' }}
-                  >
-                    {venture.tagline}
-                  </p>
+                  {venture.tagline && (
+                    <p
+                      className="text-[#44403C]"
+                      style={{ ...serifStyle, fontStyle: 'italic', fontSize: '1rem' }}
+                    >
+                      {venture.tagline}
+                    </p>
+                  )}
                 </div>
 
                 {/* Description */}
@@ -150,15 +171,15 @@ export default function Home() {
                   {venture.description}
                 </p>
 
-                {/* AI role */}
+                {/* Stack */}
                 <p
                   className="text-[13px] text-[#78716C]"
                   style={monoStyle}
                 >
-                  AI role: {venture.aiRole}
+                  Stack: {venture.stack}
                 </p>
 
-                {/* Link */}
+                {/* Links */}
                 <div className="flex items-center gap-4 pt-1">
                   {venture.externalHref && (
                     <a
@@ -185,7 +206,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STUDIO + FOUNDER ─────────────────────────────────────────────── */}
+      {/* ── SPARC + STUDIO ───────────────────────────────────────────────── */}
       <section
         className="py-20 md:py-28 bg-[#EFECE8]"
         style={{ borderTop: '1px solid rgba(28,25,23,0.08)' }}
@@ -205,12 +226,12 @@ export default function Home() {
                 className="text-sm text-[#44403C] leading-relaxed mb-5"
                 style={sansLightStyle}
               >
-                SPARC is a TDD-first AI development methodology using a multi-agent
-                architecture. It turns a solo founder into a small team. PoliCRM shipped in
-                48 hours — it also shipped with three auth bugs that didn&apos;t surface until a
-                campaign staffer tried to log in from an iPad at 11pm the night before launch.
-                I fixed them at 1am. That&apos;s what &ldquo;fast&rdquo; actually looks like. Zetto&apos;s entire
-                spec suite was still designed and documented in days, not months.
+                SPARC is a lightweight agent skill execution framework developed as a major
+                architectural refactor from a 3,000+ line prompt orchestration library. By
+                registering native functional capabilities directly into autonomous agent
+                runtimes, SPARC standardizes workspace scaffolding and drastically accelerates
+                development cycles. It turns a lean engineering bench into a high-execution
+                software factory.
               </p>
               <Link
                 href="/ventures/sparc"
@@ -221,27 +242,25 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* The Founder */}
+            {/* Studio */}
             <div>
-              <p
-                className="text-[10px] uppercase tracking-[0.12em] text-[#78716C] mb-4"
-                style={monoStyle}
-              >
-                The Founder
-              </p>
               <h2
                 className="text-[1.75rem] text-[#1C1917] mb-4"
                 style={serifStyle}
               >
-                I&apos;m Ethan.
+                Driven by Systems.<br />Backed by a Collective.
               </h2>
               <p
                 className="text-sm text-[#44403C] leading-relaxed mb-5"
                 style={sansLightStyle}
               >
-                13 years building systems — retail operations, AI pipelines, political campaign
-                infrastructure. I created SPARC because I kept waiting on people. The ventures
-                are the point.
+                Axion was founded by Ethan Cornwill to build products at the speed and quality
+                of an enterprise team by combining bleeding-edge LLM orchestration with rigid
+                operational execution. Today, Axion operates as a collaborative venture studio.
+                We pair our proprietary internal frameworks with a decentralized, rolling bench
+                of software engineers and systems specialists who ship clean code, audit
+                asynchronous logic defects, and maintain our active open-source portfolio.
+                Axion is the vehicle. The platforms are the point.
               </p>
               <Link
                 href="/about"

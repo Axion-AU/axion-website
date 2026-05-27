@@ -10,7 +10,7 @@ const navLinks = [
 const socialLinks = [
   { href: 'https://x.com/axionventuresau', label: 'X (Twitter)', symbol: '𝕏' },
   { href: 'https://www.linkedin.com/company/axion-ventures-au', label: 'LinkedIn', symbol: 'in' },
-  { href: 'https://github.com/axionventures', label: 'GitHub', symbol: 'gh' },
+  { href: 'https://github.com/axion-au', label: 'GitHub', symbol: 'gh' },
 ];
 
 export function Footer() {
