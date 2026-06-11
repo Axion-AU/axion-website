@@ -42,16 +42,6 @@ const ventures = [
     statusActive: false,
   },
   {
-    name: 'MagnetLab',
-    slug: 'magnetlab',
-    category: 'Previous',
-    tagline: null,
-    description:
-      "A previous AI automation venture co-founded by Axion's founder. MagnetLab served as the incubator for the SPARC methodology and provided a critical lesson: a cohesive vision must exist before bringing on co-founders.",
-    status: 'Previous venture',
-    statusActive: false,
-  },
-  {
     name: 'Merry Berry Açaí',
     slug: 'merry-berry-acai',
     category: 'Previous',
