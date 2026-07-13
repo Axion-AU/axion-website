@@ -2,6 +2,20 @@ import Link from 'next/link';
 
 const ventures = [
   {
+    name: 'Transport Inequality Engine',
+    tagline: null,
+    description:
+      'Every Melbourne public transport stop scored 0 to 100 from the full PTV GTFS corpus. Deployed publicly as Fusion Transport Score, with a fully reproducible methodology and client-side geocoding so no address ever touches a server.',
+    stack: 'Rust, TypeScript, Leaflet, GTFS Open Data.',
+    status: 'Live — in production',
+    statusActive: true,
+    href: '/ventures/tie',
+    externalHref: 'https://transportscore.fusionparty.org.au',
+    externalLabel: 'transportscore.fusionparty.org.au',
+    secondaryHref: 'https://github.com/axion-au',
+    secondaryLabel: 'github.com/axion-au',
+  },
+  {
     name: 'Zetto',
     tagline: 'The gym for your Japanese.',
     description:
@@ -12,18 +26,8 @@ const ventures = [
     href: '/ventures/zetto',
     externalHref: 'https://zetto.app',
     externalLabel: 'zetto.app',
-  },
-  {
-    name: 'Transport Inequality Engine',
-    tagline: null,
-    description:
-      'An interactive spatial data tool mapping Melbourne transit infrastructure to compute localized equity and transit-accessibility scores.',
-    stack: 'Rust, TypeScript, Leaflet, GTFS Open Data.',
-    status: 'Active — open source',
-    statusActive: true,
-    href: '/ventures/tie',
-    externalHref: 'https://github.com/axion-au',
-    externalLabel: 'github.com/axion-au',
+    secondaryHref: null,
+    secondaryLabel: null,
   },
   {
     name: 'Nexus',
@@ -36,6 +40,8 @@ const ventures = [
     href: '/ventures/nexus',
     externalHref: null,
     externalLabel: null,
+    secondaryHref: null,
+    secondaryLabel: null,
   },
   {
     name: 'PoliCRM',
@@ -48,6 +54,8 @@ const ventures = [
     href: '/ventures/sparc',
     externalHref: null,
     externalLabel: null,
+    secondaryHref: null,
+    secondaryLabel: null,
   },
 ];
 
@@ -180,7 +188,7 @@ export default function Home() {
                 </p>
 
                 {/* Links */}
-                <div className="flex items-center gap-4 pt-1">
+                <div className="flex items-center flex-wrap gap-4 pt-1">
                   {venture.externalHref && (
                     <a
                       href={venture.externalHref}
@@ -190,6 +198,17 @@ export default function Home() {
                       style={monoStyle}
                     >
                       {venture.externalLabel} →
+                    </a>
+                  )}
+                  {venture.secondaryHref && (
+                    <a
+                      href={venture.secondaryHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[13px] text-[#78716C] transition-colors duration-200 hover:text-[#2563EB]"
+                      style={monoStyle}
+                    >
+                      {venture.secondaryLabel} →
                     </a>
                   )}
                   <Link
