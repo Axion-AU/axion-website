@@ -119,9 +119,8 @@ export default function TieVenturePage() {
                 >
                   Fusion Transport Score
                   <ExternalLink size={14} />
-                </a>
-                . TIE is licensed to Fusion Party Australia and deployed under their branding as
-                a public transport advocacy tool. Axion retains the underlying IP and
+                </a>. TIE is licensed to Fusion Party Australia and deployed under their branding
+                as a public transport advocacy tool. Axion retains the underlying IP and
                 methodology.
               </p>
             </CardContent>
@@ -186,8 +185,7 @@ export default function TieVenturePage() {
               className="text-accent hover:underline"
             >
               github.com/axion-au
-            </a>
-            .
+            </a>.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">Get in Touch</Link>
